@@ -3,4 +3,5 @@ export interface Todo {
 	title: string | null,
 	completed: boolean | null,
 	selected: boolean,
+	createdAt: Date,
 }

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-	import { addDoc, collection } from 'firebase/firestore';
+	import { addDoc, collection, Timestamp } from 'firebase/firestore';
 	import { Ref, ref } from 'vue';
 	import { useNotification } from '@kyvg/vue3-notification';
 	import db from '../../../firebase/config.ts';
@@ -23,12 +23,11 @@
 
 	// TODO: Poner fecha de creación del TODO para organizarlos al mostrarlos
 	const addTodo = async (value: string) => {
-
-		
 		try {
 			await addDoc(collection(db, "todos"), {
 				title: value,
 				completed: false,
+				createdAt: Timestamp.now(),
 			});
 
 			notify({

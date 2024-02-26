@@ -26,11 +26,19 @@
 					title: doc.data().title || null,
 					completed: doc.data().completed,
 					selected: false,
+					createdAt: doc.data().createdAt,
 				}
 	
 				// Se guardan en el estado
 				todoData.value?.push(TODO);
 			});
+
+			todoData.value.sort((a, b) => {
+					if (a.createdAt < b.createdAt) return -1;
+					if (a.createdAt > b.createdAt) return 1;
+					return 0;
+			}).reverse();
+
 		} catch(error) {
 			notify({
 				type: "error",
