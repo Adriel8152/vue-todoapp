@@ -11,7 +11,7 @@
 </script>
 
 <template>
-	<div :class="{anyCheckboxSelected: props.anyCheckboxSelected}" class="flex flex-row overflow-x-scroll pb-3 justify-center opacity-0 pointer-events-none">
+	<div :class="{anyCheckboxSelected: props.anyCheckboxSelected}" class="flex flex-row overflow-x-scroll pb-3 justify-start sm:justify-center opacity-0 pointer-events-none">
 	<!-- Opción de todos seleccionados -->
 		<span @click="props.toggleSelectAll" class="text-sm py-2 px-4 rounded-sm cursor-pointer hover:bg-white hover:bg-opacity-5 whitespace-nowrap">
 			<input type="checkbox" v-model="props.selectAllCheckbox" class="before:content[''] translate-y-0.5 peer relative cursor-pointer appearance-none bg-white text-current w-4 h-4 border border-slate-500 border-solid rounded-sm transition-all before:flex before:h-full before:w-full before:border-2 before:border-white before:rounded-sm checked:border-indigo-500 checked:bg-indigo-500 checked:before:bg-indigo-500 mr-2"/>
